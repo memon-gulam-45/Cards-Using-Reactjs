@@ -83,7 +83,8 @@ const App = () => {
       location: "Bangalore, India",
     },
     {
-      brandLogo: "https://logo.clearbit.com/adobe.com",
+      brandLogo:
+        "https://1000logos.net/wp-content/uploads/2016/10/Adobe-Logo-1993.jpg",
       name: "Adobe",
       datePosted: "2 weeks ago",
       post: "Product Manager",
@@ -106,7 +107,22 @@ const App = () => {
 
   return (
     <div className="parent">
-      <Card />
+      {jobOpenings.map(function (elem, idx) {
+        return (
+          <div key={idx}>
+            <Card
+              brandLogo={elem.brandLogo}
+              name={elem.name}
+              datePosted={elem.datePosted}
+              post={elem.post}
+              tag1={elem.tag1}
+              tag2={elem.tag2}
+              pay={elem.pay}
+              location={elem.location}
+            />{" "}
+          </div>
+        );
+      })}
     </div>
   );
 };
